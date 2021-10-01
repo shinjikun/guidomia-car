@@ -3,8 +3,6 @@ package com.leoilagan.guidomia.ui.home.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -12,15 +10,11 @@ import com.leoilagan.guidomia.R
 import com.leoilagan.guidomia.data.local.CarInfo
 import com.leoilagan.guidomia.databinding.ListItemBinding
 import kotlinx.android.synthetic.main.list_item.view.*
-import java.util.*
-import kotlin.collections.ArrayList
 
 class CarInfoAdapter(private val itemClickedListener: CustomItemClickedListener) :
     ListAdapter<CarInfo, CarInfoAdapter.CarInfoViewHolder>(
         CarInfoDiffCallback
-    )  {
-
-
+    ) {
 
 
     private var expandedPosition: Int = -1
@@ -76,7 +70,7 @@ class CarInfoAdapter(private val itemClickedListener: CustomItemClickedListener)
         holder.expandableView().visibility = (if (isExpanded) View.VISIBLE else View.GONE)
         holder.itemView.setOnClickListener {
             expandedPosition = if (isExpanded) -1 else position
-             notifyDataSetChanged()
+            notifyDataSetChanged()
 
 //            notifyItemChanged(position)
             itemClickedListener.itemClicked(model)
@@ -85,8 +79,6 @@ class CarInfoAdapter(private val itemClickedListener: CustomItemClickedListener)
         holder.bind(model, itemClickedListener)
 
     }
-
-
 
 
 }

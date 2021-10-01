@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import androidx.core.content.ContextCompat.getSystemService
 
 import com.leoilagan.guidomia.BaseApplication
 import com.leoilagan.guidomia.data.local.CarInfo
@@ -35,7 +34,7 @@ class HomeFragment : BaseFragment<HomeViewModel>(), CustomItemClickedListener {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding =  FragmentHomeBinding.inflate(inflater,container,false)
 
         initRootView(binding)
@@ -61,7 +60,7 @@ class HomeFragment : BaseFragment<HomeViewModel>(), CustomItemClickedListener {
                     //close on screen keyboard
                     txtFilterMake.clearFocus()
                     val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.hideSoftInputFromWindow(txtFilterMake!!.getWindowToken(), 0)
+                    imm.hideSoftInputFromWindow(txtFilterMake.windowToken, 0)
 
                     viewModel.searchForMaker(makeQuery)
 
@@ -76,9 +75,9 @@ class HomeFragment : BaseFragment<HomeViewModel>(), CustomItemClickedListener {
                     //close on screen keyboard
                     txtFilterModel.clearFocus()
                     val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.hideSoftInputFromWindow(txtFilterModel!!.getWindowToken(), 0)
+                    imm.hideSoftInputFromWindow(txtFilterModel.windowToken, 0)
 
-                    viewModel.searchForMaker(modelQuery)
+                    viewModel.searchForModel(modelQuery)
 
 
                 }
