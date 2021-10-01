@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RatingBar" parent="android:style/Widget.Material.RatingBar.Small">
+      <item name="android:isIndicator">true</item>
+      <item name="android:numStars">5</item>
+      <item name="android:max">5</item>
+      <item name="android:stepSize">1.0</item>
+
+    </style>
+
+    <style name="EditTextStyle">
+        <item name="android:background">@drawable/edit_text_bg</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColorHint">@color/light_gray</item>
+        <item name="android:layout_margin">@dimen/space_8</item>
+        <item name="singleLine">true</item>
+    </style>
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Guidomia</string>
+    <string name="car_cons">Cons :</string>
+    <string name="car_pros">Pros :</string>
+    <string name="car_any_model">Any model</string>
+    <string name="car_any_make">Any make</string>
+    <string name="car_filters">Filters</string>
+    <string name="car_price">Price:</string>
+    <string name="car_photo">Car Photo</string>
+
+    <string name="screen_title">Tacoma 2021</string>
+    <string name="screen_sub">Get yours now</string>
+    <string name="price">Price :</string>
+</resources>
